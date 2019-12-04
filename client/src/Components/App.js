@@ -4,6 +4,9 @@ import Home from "../Routes/Home";
 import About from "../Routes/About";
 import Login from "../Routes/Login";
 import Register from "../Routes/Register";
+
+import "materialize-css/dist/css/materialize.min.css";
+
 function App() {
   return (
     <BrowserRouter>
