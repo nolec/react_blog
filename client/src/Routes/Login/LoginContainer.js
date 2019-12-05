@@ -10,9 +10,8 @@ class LoginContainer extends Component {
     errors: []
   };
   displayErrors = errors => {
-    errors.map((error, i) => {
-      return <p key={i}>{error}</p>;
-    });
+    console.log(errors);
+    return errors.map((error, i) => <p key={i}>{error}</p>);
   };
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -61,6 +60,7 @@ class LoginContainer extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state);
   return {
     user: state.user
   };

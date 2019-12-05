@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Container = styled.div``;
 
@@ -27,12 +28,9 @@ const LoginPresenter = ({
                   type="email"
                   className="validate"
                 />
-                <label htmlFor="email">Email</label>
-                <span
-                  className="helper-text"
-                  data-error="Type a right type email"
-                  data-success="right"
-                />
+                <label className="action" htmlFor="email">
+                  Email
+                </label>
               </div>
             </div>
           </div>
@@ -47,27 +45,35 @@ const LoginPresenter = ({
                   type="password"
                   className="validate"
                 />
-                <label htmlFor="password">Password</label>
-                <span
-                  className="helper-text"
-                  data-error="wrong"
-                  data-success="right"
-                />
+                <label className="action" htmlFor="password">
+                  Password
+                </label>
               </div>
             </div>
           </div>
           {console.log(errors)}
           <div>{errors.length > 0 && displayErrors(errors)}</div>
           <div className="row">
-            <div className="col 12">
+            <div className="col 6">
               <button
                 className="btn waves-effect red lighten-2"
                 type="submit"
                 name="action"
-                onClick={submitForm}
+                onClick={event => submitForm(event)}
               >
                 Login
               </button>
+            </div>
+            <div className="col 6">
+              <Link to="/register">
+                <button
+                  className="btn waves-effect red lighten-2"
+                  type="submit"
+                  name="action"
+                >
+                  Sign Up
+                </button>
+              </Link>
             </div>
           </div>
         </form>
